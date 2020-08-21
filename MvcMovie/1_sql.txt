@@ -1,0 +1,29 @@
+USE [MvcMovieContext]
+GO
+
+/****** オブジェクト: Table [dbo].[Movie] スクリプト日付: 2020/08/19 16:35:54 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+DROP TABLE [dbo].[Movie];
+
+
+GO
+CREATE TABLE [dbo].[Movie] (
+    [ID]          INT             IDENTITY (1, 1) NOT NULL,
+    [Genre]       NVARCHAR (MAX)  NULL,
+    [Price]       DECIMAL (18, 2) NOT NULL,
+    [ReleaseDate] DATETIME2 (7)   NOT NULL,
+    [Title]       NVARCHAR (MAX)  NULL
+);
+
+
+
+SET IDENTITY_INSERT [dbo].[Movie] ON
+INSERT INTO [dbo].[Movie] ([ID], [Genre], [Price], [ReleaseDate], [Title]) VALUES (1, N'come', CAST(1123.00 AS Decimal(18, 2)), N'2015-11-01 00:00:00', N'abc')
+INSERT INTO [dbo].[Movie] ([ID], [Genre], [Price], [ReleaseDate], [Title]) VALUES (3, N'Comedy', CAST(2.99 AS Decimal(18, 2)), N'2015-11-28 00:00:00', N'www')
+INSERT INTO [dbo].[Movie] ([ID], [Genre], [Price], [ReleaseDate], [Title]) VALUES (4, N'Comedy', CAST(2.00 AS Decimal(18, 2)), N'2020-10-18 00:00:00', N'When Harry')
+SET IDENTITY_INSERT [dbo].[Movie] OFF
